@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg">
+            <div class="card-header bg-success text-white text-center">
+                <h3>Edit Task</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Task Title</label>
+                        <input type="text" name="title" id="title" class="form-control" value="{{ task.title }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Task Description</label>
+                        <textarea name="description" id="description" class="form-control" rows="4">{{ task.description }}</textarea>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Update Task</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <a href="/" class="btn btn-link">Back to Task List</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
